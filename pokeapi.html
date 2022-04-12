@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon API</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="pagination text-center flex-row flex justify-center"></div>
+    <div id="divResult"></div>
+
+    <div id="pokemonModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+        <div class="relative p-4 w-full max-w-4xl h-full md:h-auto">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <div class="flex justify-between items-center p-5 rounded-t">
+                    <h3 class="text-xl font-medium text-black" id="modalPokemonName">
+                        POKEMON NAAM HIER
+                    </h3>
+
+                    <p class="text-md font-light text-black" id="modalPokemonType">
+                        POKEMON TYPE HIER
+                    </p>
+
+                    <button type="button" class="text-gray-400 bg-transparent text-black" id="toggleModal">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="p-6 space-y-6">
+                    <img id="modalPokemonImage">
+                    <p class="text-md font-black text-black" id="modalPokemonType">
+                        ABILITIES
+                    </p>
+
+                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400" id="modalPokemonMoves">
+                        POKEMON MOVES GAAN HIER
+                    </p>
+
+                    <p class="text-md font-black text-black" id="modalPokemonType">
+                        STATS
+                    </p>
+                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400" id="modalPokemonStats"></p>
+
+                    <div class="inline-flex mt-2 xs:mt-0 modalNavigation">
+                        <button class="py-2 px-4 text-sm font-medium text-white bg-gray-800 rounded-l hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white mr-4" id="modalPrevious">
+                            Prev
+                        </button>
+        
+                        <button class="py-2 px-4 text-sm font-medium text-white bg-gray-800 rounded-r border-0 border-l border-gray-700 hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ml-4" id="modalNext">
+                            Next
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="app.js" type="module"></script>
+</body>
+
+</html>
